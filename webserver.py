@@ -74,7 +74,7 @@ def handle_http_client(conn, addr):
         filepath = get_file_path(path)
 
         if not os.path.exists(filepath):
-            error_file = os.path.join(TUBESJARKOM, "404.html")
+            error_file = os.path.join(BASE_DIR, "status", "404.html")
 
             if os.path.exists(error_file):
                 with open(error_file, "rb") as f:
