@@ -3,10 +3,10 @@ import sys
 import time
 import statistics
 
-PROXY_IP = "192.168.0.153"
+PROXY_IP = "172.20.10.4"
 PROXY_PORT = 8888
 
-SERVER_IP = "192.168.0.149"
+SERVER_IP = "172.20.10.3"
 UDP_PORT = 9000
 
 
