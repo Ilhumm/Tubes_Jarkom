@@ -154,28 +154,30 @@ function showFlow(el, text) {
 }
 
 function simulateRequest() {
-    let url = document.getElementById("url").value;
-    let result = document.getElementById("sim-result");
 
-    const routes = ["/", "/osi", "/tcpip", "/qos", "/implementation"];
+    let url = document.getElementById("url").value.trim();
 
     if (!url) {
-        result.innerText = "⚠️ Enter a path";
+        alert("Masukkan path terlebih dahulu");
         return;
     }
 
-    if (routes.includes(url)) {
-        result.innerText = "✅ 200 OK";
-        result.style.color = "lightgreen";
-    } else if (url === "/timeout") {
-        result.innerText = "⏱ 504 Gateway Timeout";
-        result.style.color = "orange";
-    } else if (url === "/gateway") {
-        result.innerText = "🔌 502 Bad Gateway";
-        result.style.color = "orange";
+    const routes = {
+        "/": "index.html",
+        "/osi": "osi.html",
+        "/tcpip": "tcpip.html",
+        "/qos": "qos.html",
+        "/502": "status/502.html",
+        "/500": "status/500.html",
+        "/404": "status/404.html",
+        "/504": "status/504.html",
+        "/implementation": "implementation.html"
+    };
+
+    if (routes[url]) {
+        window.location.href = routes[url];
     } else {
-        result.innerText = "❌ 404 Not Found";
-        result.style.color = "red";
+        window.location.href = "status/404.html";
     }
 }
 
