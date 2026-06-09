@@ -7,7 +7,7 @@ from datetime import datetime
 
 PROXY_PORT = 8888
 
-SERVER_IP = "192.168.201.1"
+SERVER_IP = "192.168.0.149"
 SERVER_PORT = 8888
 
 BUFFER_SIZE = 4096
